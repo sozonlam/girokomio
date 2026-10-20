@@ -1,0 +1,140 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME
+  branch: main
+  base_url: https://YOUR-FREE-OAUTH-SERVICE.example
+  auth_endpoint: auth
+
+site_url: https://YOUR-SITE-DOMAIN.example
+display_url: https://YOUR-SITE-DOMAIN.example
+locale: el
+media_folder: assets/uploads
+public_folder: assets/uploads
+publish_mode: simple
+
+collections:
+  - name: site
+    label: Αρχική σελίδα
+    files:
+      - name: homepage
+        label: Αρχική και καλωσόρισμα
+        file: content/site.json
+        format: json
+        fields:
+          - { name: name, label: Όνομα ιδρύματος, widget: string }
+          - { name: hero_title, label: Κεντρικός τίτλος, widget: string }
+          - { name: hero_text, label: Κείμενο αρχικής, widget: text }
+          - { name: hero_image, label: Φωτογραφία αρχικής, widget: image, required: false }
+          - { name: welcome_title, label: Τίτλος καλωσορίσματος, widget: string }
+          - { name: welcome_image, label: Φωτογραφία καλωσορίσματος, widget: image, required: false }
+          - { name: welcome_text, label: Κείμενο καλωσορίσματος, widget: markdown }
+  - name: pages
+    label: Σελίδες
+    files:
+      - name: page_content
+        label: Κείμενα σελίδων και πρόεδροι
+        file: content/pages.json
+        format: json
+        fields:
+          - name: pages
+            label: Κείμενα σελίδων
+            widget: list
+            fields:
+              - { name: id, label: Αναγνωριστικό σελίδας, widget: string, hint: "Μην αλλάξετε τα υπάρχοντα αναγνωριστικά." }
+              - { name: title, label: Τίτλος, widget: string }
+              - { name: text, label: Κείμενο, widget: markdown }
+          - name: presidents
+            label: Πρόεδροι
+            widget: list
+            required: false
+            fields:
+              - { name: name, label: Ονοματεπώνυμο, widget: string }
+              - { name: years, label: Περίοδος, widget: string, required: false }
+              - { name: image, label: Φωτογραφία, widget: image, required: false }
+              - { name: bio, label: Σύντομο βιογραφικό, widget: text, required: false }
+  - name: news
+    label: Τα νέα μας
+    files:
+      - name: articles
+        label: Άρθρα και ανακοινώσεις
+        file: content/news.json
+        format: json
+        fields:
+          - name: posts
+            label: Δημοσιεύσεις
+            widget: list
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { name: title, label: Τίτλος, widget: string }
+              - { name: date, label: Ημερομηνία, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+              - { name: summary, label: Σύντομη περιγραφή, widget: text }
+              - { name: image, label: Φωτογραφία, widget: image, required: false }
+              - { name: body, label: Κείμενο άρθρου, widget: markdown, required: false }
+  - name: documents
+    label: Έγγραφα εισαγωγής
+    files:
+      - name: admission_documents
+        label: Έγγραφα προς λήψη
+        file: content/documents.json
+        format: json
+        fields:
+          - name: documents
+            label: Αρχεία PDF
+            widget: list
+            fields:
+              - { name: title, label: Τίτλος εγγράφου, widget: string }
+              - { name: file, label: Αρχείο PDF, widget: file }
+  - name: galleries
+    label: Φωτογραφίες
+    files:
+      - name: gallery_content
+        label: Φωτογραφίες χώρων και εκδηλώσεων
+        file: content/galleries.json
+        format: json
+        fields:
+          - name: spaces
+            label: Οι χώροι μας
+            widget: list
+            required: false
+            fields: &photo_fields
+              - { name: title, label: Λεζάντα, widget: string }
+              - { name: image, label: Φωτογραφία, widget: image }
+              - { name: alt, label: Περιγραφή φωτογραφίας, widget: string, required: false }
+          - name: current
+            label: Πρόσφατες φωτογραφίες
+            widget: list
+            required: false
+            fields: *photo_fields
+          - name: older
+            label: Παλαιότερες φωτογραφίες
+            widget: list
+            required: false
+            fields: *photo_fields
+          - name: patriarch
+            label: Με τον Πατριάρχη μας
+            widget: list
+            required: false
+            fields: *photo_fields
+  - name: contact
+    label: Επικοινωνία και δωρεές
+    files:
+      - name: contact_details
+        label: Στοιχεία επικοινωνίας και τραπεζικοί λογαριασμοί
+        file: content/contact.json
+        format: json
+        fields:
+          - { name: address, label: Διεύθυνση, widget: string }
+          - { name: phone, label: Τηλέφωνο, widget: string, required: false }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: hours, label: Ώρες επικοινωνίας, widget: string, required: false }
+          - { name: description, label: Πρόσθετες πληροφορίες, widget: markdown, required: false }
+          - { name: donations_title, label: Τίτλος δωρεών, widget: string }
+          - { name: donations_note, label: Πληροφορίες δωρεών, widget: text }
+          - name: bank_accounts
+            label: Τραπεζικοί λογαριασμοί
+            widget: list
+            required: false
+            fields:
+              - { name: bank, label: Τράπεζα, widget: string }
+              - { name: account_name, label: Δικαιούχος, widget: string, required: false }
+              - { name: iban, label: IBAN, widget: string }

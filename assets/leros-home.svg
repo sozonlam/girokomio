@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" role="img" aria-labelledby="title desc">
+  <title id="title">Ένα φιλόξενο σπίτι στη Λέρο</title>
+  <desc id="desc">Ζεστή εικονογράφηση ενός παραθαλάσσιου νησιώτικου σπιτιού με κήπο.</desc>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#d9e8df"/><stop offset="1" stop-color="#f5e5ca"/></linearGradient>
+    <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#77a9a1"/><stop offset="1" stop-color="#b4cec0"/></linearGradient>
+  </defs>
+  <rect width="960" height="680" fill="url(#sky)"/>
+  <circle cx="767" cy="124" r="58" fill="#e9be83" opacity=".86"/>
+  <path d="M0 354c112-79 217-72 325 2 106-102 211-91 315-14 105-75 206-72 320-1v121H0Z" fill="#a7bd9c"/>
+  <path d="M0 395c164-61 301-52 439 20 127-65 301-62 521 8v107H0Z" fill="url(#sea)"/>
+  <path d="M0 456c157-40 308-34 447 16 144-50 314-45 513 14v65H0Z" fill="#d3b78c" opacity=".6"/>
+  <path d="M0 522c186-42 378-34 570 23 126-37 258-32 390 14v121H0Z" fill="#819574"/>
+  <path d="M174 326h562v243H174z" fill="#f5f0e5"/>
+  <path d="M137 333 455 157l318 176z" fill="#bb7558"/>
+  <path d="m137 333 318-176 75 42-293 164z" fill="#d08b69"/>
+  <path d="M206 352h498v33H206z" fill="#e2d2b6"/>
+  <path d="M226 385h78v114h-78zM361 385h78v114h-78zM495 385h78v114h-78zM630 385h49v114h-49z" fill="#b9d0c7"/>
+  <path d="M226 385h78v11h-78zM361 385h78v11h-78zM495 385h78v11h-78zM630 385h49v11h-49z" fill="#fff9eb"/>
+  <path d="M255 385v114M390 385v114M524 385v114M655 385v114M226 430h78M361 430h78M495 430h78M630 430h49" fill="none" stroke="#f7f3eb" stroke-width="6"/>
+  <path d="M431 442h56v127h-56z" fill="#bc7759"/>
+  <circle cx="476" cy="507" r="3" fill="#f4dfbf"/>
+  <path d="M156 563h604v20H156z" fill="#d7c3a5"/>
+  <path d="M138 588c35-40 72-40 107 0m461 0c35-45 81-45 117 0" fill="#718b66"/>
+  <g fill="#e2a486">
+    <circle cx="172" cy="565" r="12"/><circle cx="199" cy="552" r="9"/><circle cx="222" cy="567" r="11"/>
+    <circle cx="728" cy="567" r="11"/><circle cx="751" cy="552" r="9"/><circle cx="775" cy="566" r="12"/>
+  </g>
+  <path d="M95 562c17-63 20-115 9-159m9 90-36-37m35 61 39-47m-38 5-22-40" fill="none" stroke="#697f5c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M861 565c-16-66-14-116 1-162m-3 94 36-36m-38 61-39-46m40 4 21-40" fill="none" stroke="#697f5c" stroke-width="8" stroke-linecap="round"/>
+  <path d="M69 414c19-28 42-42 69-40-14 26-36 40-69 40Zm37-28c0-30 12-53 36-69 6 31-5 53-36 69Zm730 27c-18-29-41-43-68-42 13 27 36 41 68 42Zm-36-28c1-30-11-53-35-70-7 31 4 53 35 70Z" fill="#637d57"/>
+  <path d="M275 282h89m55-47h74m55 45h63" stroke="#f5d6ac" stroke-width="8" stroke-linecap="round" opacity=".8"/>
+</svg>
